@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- UMD css -->
+  <!-- Replace the below link to wherever you store UMD styling -->
+  <link rel="stylesheet" href="stylesheets\style.css">
+
+
+  <title>Alumni Wall Search</title>
+
+  <style>
+
+    :root {
+      --darkwhite: #F5F5F5;
+      --white: #ffffff;
+      --red: #D1343B;
+    }
+
+    .is-darkwhite {
+      background-color: var(--darkwhite);
+    }
+
+    .is-white {
+      background-color: var(--white);
+    }
+
+    .person-card {
+      padding: 20px;
+    }
+
+    #outer {
+      padding-top: 10vh;
+      padding-bottom: 10vh;
+    }
+
+    #inner-wrapper {
+      min-height: 100vh;
+      padding: 60px;
+    }
+
+    #header-content {
+      font-size: 18px;
+    }
+
+    .wall-search-input {
+      border: 2px solid var(--red);
+      padding: 16px 10px;
+      border-right: none;
+    }
+
+    .button {
+      border: 2;
+      background-color: var(--red);
+      color: var(--darkwhite);
+    }
+
+    #wall-search-submit {
+      min-width: 120px !important;
+      height: 56px !important;
+      background-color: var(--red);
+      color: var(--white);
+    }
+
+    .input-wrapper {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .is-wide {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      #wall-search-input-ln {
+        border-right: 2px solid var(--red);
+        border-bottom: none;
+      }
+      #wall-search-input-fn {
+        border-bottom: none;
+      }
+    }
+
+    @media (max-width: 992px) {
+      #wall-search-input-fn {
+        border-right: 2px solid var(--red);
+      }
+      #wall-search-input-yr {
+        border-right: 2px solid var(--red);
+        border-bottom: none;
+      }
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="container-fluid is-darkwhite" id = "outer">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 is-white" id = "inner-wrapper">
+
+        <div class="header-wrapper">
+          <h1>Alumni Wall Search</h1>
+          <hr>
+          <p id = "header-content">
+            Either first name or last name must be provided. To narrow results further, fill in the other fields. 
+          </p>
+        </div>
+
+        <div class="form-wrapper" style="margin-bottom:50px">
+
+          <div class="row" style="margin-bottom: 30px;">
+            <div class = "col-lg-3 col-lg-offset-1 col-md-5 col-md-offset-1 input-wrapper">
+              <input class = "is-wide wall-search-input" id = "wall-search-input-fn" placeholder = "First Name" required>
+            </div>
+            <div class = "col-lg-3 col-md-5 input-wrapper">
+              <input class = "is-wide wall-search-input" id = "wall-search-input-ln" placeholder = "Last Name" required>
+            </div>
+            <div class = "col-lg-2 col-md-5  col-lg-offset-0 col-md-offset-1 input-wrapper">
+              <input class = "is-wide wall-search-input" id = "wall-search-input-yr" placeholder = "Grad Year">
+            </div>
+            <div class = "col-lg-2 col-md-5 input-wrapper">
+              <button class = "btn square is-wide" type = "submit" id = "wall-search-submit">Search</button>
+            </div>
+
+          </form>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Error text, typically hidden -->
+        <div class = "row" id = "err" style="display:none; font-size: 16px">
+          <div class="col-md-12 text-center">
+              Sorry, there are no lifewall members matching those parameters!
+          </div>
+        </div>
+
+        <div class="row" id = "cards"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- js -->
+  <script type="text/javascript" src="config.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
