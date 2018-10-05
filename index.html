@@ -24,14 +24,10 @@
   <style>
 
     :root {
-      --darkwhite: #F5F5F5;
       --white: #ffffff;
       --red: #D1343B;
     }
 
-    .is-darkwhite {
-      background-color: var(--darkwhite);
-    }
 
     .is-white {
       background-color: var(--white);
@@ -42,7 +38,6 @@
     }
 
     #outer {
-      padding-top: 10vh;
       padding-bottom: 10vh;
     }
 
@@ -106,18 +101,38 @@
         border-bottom: none;
       }
     }
+    .navbar-bottom {
+      background: #BDBDBD;
+    }
+    .navbar-bottom li {
+      display: inline-block !important;
+    }
+
+    .nav {
+      text-align: center;
+    }
+    .top-logo {
+      padding: 1em 0;
+      max-width: 300px;
+    }
 
   </style>
 
 </head>
 <body>
-
+  <div class="container">
+    <div class="row">
+      <img class="top-logo img-fluid img-responsive umd-logo" src="https://static.alumniq.com/UMD/production/messaging/lib/2018/6B2B892C-9B31-D02C-A20EB5B9F1F06585.png" alt="University of Maryland Logo">
+    </div>
+  </div>
   <div class="container-fluid is-darkwhite" id = "outer">
+    
+
     <div class="row">
       <div class="col-md-8 col-md-offset-2 is-white" id = "inner-wrapper">
 
         <div class="header-wrapper">
-          <h1>Alumni Wall Search</h1>
+          <h1>Frann G. & Eric S. Francis Lifetime Member Wall Search</h1>
           <hr>
           <p id = "header-content">
             Either first name or last name must be provided. To narrow results further, fill in the other fields. 
@@ -158,8 +173,10 @@
       </div>
     </div>
   </div>
+  <footer role="contentinfo"><section class="container"><div class="row"><div class="col-lg-4"><a href="http://www.umd.edu/" aria-label="Visit the university of maryland main homepage"><img class="img-fluid img-responsive umd-logo" src="https://static.alumniq.com/UMD/production/messaging/lib/2018/6B2B892C-9B31-D02C-A20EB5B9F1F06585.png" alt="University of Maryland Logo"></a></div><div class="col-lg-5"><p class="grey footer-info"><strong>University of Maryland Alumni Association</strong><br>Samuel Riggs IV Alumni Center / 7801 Alumni Drive / College Park, MD 20742-1521<br>P: 301.405.4678 / 800.336.8627   /  <a href="https://alumni.umd.edu/">alumni.umd.edu</a></p></div><div class="col-lg-3"><div class="social clearfix"><ul class="menu navbar-nav no-pad" aria-label="footer social media menu"><li><a class="no-pad" href="https://www.youtube.com/user/UMD2101" target="_blank" rel="noopener noreferrer" aria-label="Visit the university of maryland Youtube Channel"><i class="fa fa-youtube-play"></i></a></li><li><a class="no-pad" href="https://www.facebook.com/UnivofMaryland" target="_blank" rel="noopener noreferrer" aria-label="like the university of maryland on facebook"><i class="fa fa-facebook"></i></a></li><li><a class="no-pad" href="https://twitter.com/UofMaryland" target="_blank" rel="noopener noreferrer" aria-label="follow the university of maryland on twitter"><i class="fa fa-twitter"></i></a></li><li><a class="no-pad" href="https://www.instagram.com/univofmaryland/" target="_blank" rel="noopener noreferrer" aria-label="follow the university of maryland on instagram"><i class="fa fa-instagram"></i></a></li></ul></div></div></div></section><div class="row sub-footer"><div class="navbar-bottom clearfix"><ul class="nav justify-content-center"><li class="nav-item"><a class="nav-link" href="https://umd.edu/web-accessibility">Web Accessibility</a></li><li class="nav-item"><a class="nav-link" href="https://umd.service-now.com/itsc/?id=kb_article&amp;article=KB0012192">Privacy Policy</a></li><li class="nav-item"><a class="nav-link" href="http://www.urhome.umd.edu/">Division of University Relations</a></li><li class="nav-item"><a class="nav-link disabled">©<!-- --> 2018</a></li></ul></div></div></footer>
 
   <!-- js -->
+  <script src="https://umd-header.umd.edu/build/bundle.js?search=0&search_domain=&events=0&news=0&schools=0&admissions=0&support=1&support_url=&wrapper=&sticky=0"></script>
   <script type="text/javascript" src="config.js"></script>
   <script type="text/javascript" src="script.js"></script>
 

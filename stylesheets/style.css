@@ -10247,10 +10247,6 @@ Image left content right card design
   transform: scaleX(1);
 }
 
-/* line 2, ../sass/components/_nav.scss */
-body {
-  padding-top: 44px;
-}
 
 /* line 5, ../sass/components/_nav.scss */
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
@@ -10852,7 +10848,7 @@ footer .social .navbar-nav {
 }
 /* line 93, ../sass/components/_footer.scss */
 footer .navbar-bottom {
-  margin: 0.5rem 0;
+  /*margin: 0.5rem 0;*/
   width: 100%;
 }
 /* line 97, ../sass/components/_footer.scss */
@@ -10869,6 +10865,9 @@ footer .navbar-bottom .navbar-nav a {
   list-style-type: none;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+footer .navbar-bottom .navbar-nav a:hover {
+  background: transparent;
 }
 @media only screen and (min-width: 768px) and (max-width: 992px) {
   /* line 103, ../sass/components/_footer.scss */
@@ -10964,7 +10963,6 @@ footer .navbar-bottom .navbar-nav > li + li:before {
 /* line 184, ../sass/components/_footer.scss */
 .sub-footer {
   margin: 0;
-  padding: 0.45em 0;
   width: 100%;
 }
 /* line 189, ../sass/components/_footer.scss */
