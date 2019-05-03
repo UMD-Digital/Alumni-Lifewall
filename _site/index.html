@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- UMD css -->
+  <!-- Replace the below link to wherever you store UMD styling -->
+  <link rel="stylesheet" href="stylesheets\style.css">
+
+
+  <title>Alumni Wall Search</title>
+
+  <style>
+
+    :root {
+      --white: #ffffff;
+      --red: #D1343B;
+    }
+
+
+    .is-white {
+      background-color: var(--white);
+    }
+
+    .person-card {
+      padding: 20px;
+    }
+
+    #outer {
+      padding-bottom: 10vh;
+    }
+
+    #inner-wrapper {
+      min-height: 100vh;
+      padding: 60px;
+    }
+
+    .header-content {
+      font-size: 18px;
+      padding-bottom: .62em;
+    }
+
+    .wall-search-input {
+      border: 2px solid var(--red);
+      padding: 16px 10px;
+      border-right: none;
+    }
+
+    .button {
+      border: 2;
+      background-color: var(--red);
+      color: var(--darkwhite);
+    }
+
+    #wall-search-submit {
+      min-width: 120px !important;
+      height: 56px !important;
+      background-color: var(--red);
+      color: var(--white);
+    }
+
+    .input-wrapper {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .is-wide {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      #wall-search-input-ln {
+        border-right: 2px solid var(--red);
+        border-bottom: none;
+      }
+      #wall-search-input-fn {
+        border-bottom: none;
+      }
+    }
+
+    @media (max-width: 992px) {
+      #wall-search-input-fn {
+        border-right: 2px solid var(--red);
+      }
+      #wall-search-input-yr {
+        border-right: 2px solid var(--red);
+        border-bottom: none;
+      }
+    }
+    .navbar-bottom {
+      background: #BDBDBD;
+    }
+    .navbar-bottom li {
+      display: inline-block !important;
+    }
+
+    .nav {
+      text-align: center;
+    }
+    .top-logo {
+      padding: 1em 0;
+      max-width: 300px;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <a href="https://alumni.umd.edu/"><img class="top-logo img-fluid img-responsive umd-logo" src="https://static.alumniq.com/UMD/production/messaging/lib/2018/6B2B892C-9B31-D02C-A20EB5B9F1F06585.png" alt="University of Maryland Logo"></a>
+    </div>
+  </div>
+  <div class="container-fluid is-darkwhite" id = "outer">
+    
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2" style="padding: 0;">
+        <img class="img-fluid img-responsive" src="img/wall.png" alt="University of Maryland life wall diagram">
+      </div>
+      <div class="col-md-8 col-md-offset-2 is-white" id = "inner-wrapper">
+      
+        <div class="header-wrapper">
+          <h1>Frann G. & Eric S. Francis Lifetime Member Wall Search</h1>
+          <hr>
+          <p class= "header-content">The Frann G. & Eric S. Francis Lifetime Member Wall honors our dedicated Maryland Alumni Association Lifetime Members. The wall is located on the grounds of the Samuel Riggs IV Alumni Center across from the Dessie M. & James R. Moxley Jr. Gardens and near the south gate of Capital One Field at Maryland Stadium.</p> 
+          <p class= "header-content">To identify the location of your name, enter your first and last name in the fields below. Note either first name or last name must be provided. To narrow results further, complete other fields.</p>
+          <p class= "header-content">Either first name or last name must be provided. To narrow results further, fill in the other fields. 
+          </p>
+        </div>
+
+        <div class="form-wrapper" style="margin-bottom:50px">
+
+          <div class="row" style="margin-bottom: 30px;">
+            <div class = "col-lg-3 col-lg-offset-1 col-md-5 col-md-offset-1 input-wrapper">
+              <input class = "is-wide wall-search-input" id = "wall-search-input-fn" placeholder = "First Name" required>
+            </div>
+            <div class = "col-lg-3 col-md-5 input-wrapper">
+              <input class = "is-wide wall-search-input" id = "wall-search-input-ln" placeholder = "Last Name" required>
+            </div>
+            <div class = "col-lg-2 col-md-5  col-lg-offset-0 col-md-offset-1 input-wrapper">
+              <input class = "is-wide wall-search-input" id = "wall-search-input-yr" placeholder = "Grad Year">
+            </div>
+            <div class = "col-lg-2 col-md-5 input-wrapper">
+              <button class = "btn square is-wide" type = "submit" id = "wall-search-submit">Search</button>
+            </div>
+
+          </form>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Error text, typically hidden -->
+        <div class = "row" id = "err" style="display:none; font-size: 16px">
+          <div class="col-md-12 text-center">
+              Sorry, there are no lifewall members matching those parameters!
+          </div>
+        </div>
+
+        <div class="row" id = "cards"></div>
+
+      </div>
+    </div>
+  </div>
+  <footer role="contentinfo"><section class="container"><div class="row"><div class="col-lg-4"><a href="http://www.umd.edu/" aria-label="Visit the university of maryland main homepage"><img class="img-fluid img-responsive umd-logo" src="https://static.alumniq.com/UMD/production/messaging/lib/2018/6B2B892C-9B31-D02C-A20EB5B9F1F06585.png" alt="University of Maryland Logo"></a></div><div class="col-lg-5"><p class="grey footer-info"><strong>University of Maryland Alumni Association</strong><br>Samuel Riggs IV Alumni Center / 7801 Alumni Drive / College Park, MD 20742-1521<br>P: 301.405.4678 / 800.336.8627   /  <a href="https://alumni.umd.edu/">alumni.umd.edu</a></p></div><div class="col-lg-3"><div class="social clearfix"><ul class="menu navbar-nav no-pad" aria-label="footer social media menu"><li><a class="no-pad" href="https://www.youtube.com/user/UMD2101" target="_blank" rel="noopener noreferrer" aria-label="Visit the university of maryland Youtube Channel"><i class="fa fa-youtube-play"></i></a></li><li><a class="no-pad" href="https://www.facebook.com/UnivofMaryland" target="_blank" rel="noopener noreferrer" aria-label="like the university of maryland on facebook"><i class="fa fa-facebook"></i></a></li><li><a class="no-pad" href="https://twitter.com/UofMaryland" target="_blank" rel="noopener noreferrer" aria-label="follow the university of maryland on twitter"><i class="fa fa-twitter"></i></a></li><li><a class="no-pad" href="https://www.instagram.com/univofmaryland/" target="_blank" rel="noopener noreferrer" aria-label="follow the university of maryland on instagram"><i class="fa fa-instagram"></i></a></li></ul></div></div></div></section><div class="row sub-footer"><div class="navbar-bottom clearfix"><ul class="nav justify-content-center"><li class="nav-item"><a class="nav-link" href="https://umd.edu/web-accessibility">Web Accessibility</a></li><li class="nav-item"><a class="nav-link" href="https://umd.service-now.com/itsc/?id=kb_article&amp;article=KB0012192">Privacy Policy</a></li><li class="nav-item"><a class="nav-link" href="http://www.urhome.umd.edu/">Division of University Relations</a></li><li class="nav-item"><a class="nav-link disabled">©<!-- --> 2018</a></li></ul></div></div></footer>
+
+  <!-- js -->
+  <script src="https://umd-header.umd.edu/build/bundle.js?search=0&search_domain=&events=0&news=0&schools=0&admissions=0&support=1&support_url=&wrapper=&sticky=0"></script>
+  <script type="text/javascript" src="config.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>

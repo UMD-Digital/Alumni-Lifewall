@@ -3,6 +3,9 @@ let searchKW = 'lifewall/search';
 
 let sectionMap = new Object();
 
+const apiKey = process.env.KEY
+console.log(apiKey)
+
 $(document).ready(function() {
   $('.wall-search-input').keydown(function(event) {
     // Allows to submit form by pressing enter on any field
@@ -14,6 +17,10 @@ $(document).ready(function() {
 
   let sectionUrl = urlProd + '/' + api.key + '/' + 'lifewall/section';
   let panelUrl = urlProd + '/' + api.key + '/' + 'lifewall/panel/';
+
+  const apiKey = process.env.KEY
+
+  console.log(apikkey)
 
   // Creates mapping of panel and section id to a string name
   $.ajax({
