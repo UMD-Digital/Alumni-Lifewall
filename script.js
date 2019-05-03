@@ -1,9 +1,12 @@
+const dotenv = require('dotenv')
+import { $ } from 'jquery';
+
 let urlProd = 'https://advancement.umd.edu/gps/api/application';
 let searchKW = 'lifewall/search';
 
 let sectionMap = new Object();
 
-const apiKey = process.env.KEY
+const apiKey={process.env.KEY}
 console.log(apiKey)
 
 $(document).ready(function() {
