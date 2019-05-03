@@ -1,10 +1,14 @@
-const dotenv = require('dotenv')
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 import $ from 'jquery';
 
 let urlProd = 'https://advancement.umd.edu/gps/api/application';
 let searchKW = 'lifewall/search';
 
 let sectionMap = new Object();
+
+const dotenv = require('dotenv')
 
 const apiKey={process.env.KEY}
 console.log(apiKey)

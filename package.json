@@ -6,10 +6,6 @@
   "scripts": {
     "test": "serve index.html"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/UMD-Digital/Alumni-Lifewall.git"
-  },
   "author": "University of Maryland",
   "license": "MIT",
   "devDependencies": {
@@ -23,6 +19,8 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
