@@ -15,8 +15,8 @@ $(document).ready(function() {
      }
   });
 
-  let sectionUrl = urlProd + '/' + api.key + '/' + 'lifewall/section';
-  let panelUrl = urlProd + '/' + api.key + '/' + 'lifewall/panel/';
+  let sectionUrl = urlProd + '/' + apiKey + '/' + 'lifewall/section';
+  let panelUrl = urlProd + '/' + apiKey + '/' + 'lifewall/panel/';
 
   const apiKey = process.env.KEY
 
@@ -74,7 +74,7 @@ search = () => {
   let ln = $("#wall-search-input-ln").val();
   let yr = $("#wall-search-input-yr").val();
 
-  let searchUrl = urlProd + '/' + api.key + '/' + searchKW;
+  let searchUrl = urlProd + '/' + apiKey + '/' + searchKW;
 
   if (fn !== '') {
     searchUrl += '&Firstname=' + fn;

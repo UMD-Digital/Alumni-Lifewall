@@ -1,0 +1,18 @@
+{
+  "name": "alumni-lifewall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "serve index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UMD-Digital/Alumni-Lifewall.git"
+  },
+  "author": "University of Maryland",
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^8.0.0"
+  }
+}
