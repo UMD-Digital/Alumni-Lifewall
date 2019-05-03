@@ -1,5 +1,5 @@
 const dotenv = require('dotenv')
-import { $ } from 'jquery';
+import $ from 'jquery';
 
 let urlProd = 'https://advancement.umd.edu/gps/api/application';
 let searchKW = 'lifewall/search';
